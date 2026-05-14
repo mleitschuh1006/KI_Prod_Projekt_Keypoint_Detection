@@ -1,0 +1,9 @@
+experiment_name: usip_first_test
+method: USIP
+notes: Erste lernbasierte Methode, da keine expliziten Keypoint-Labels nötig sind.
+dataset: TBD
+metrics:
+  - repeatability
+  - matching_score
+  - registration_success
+  - runtime

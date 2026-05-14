@@ -1,0 +1,8 @@
+experiment_name: baseline_iss
+method: ISS
+notes: Klassische geometrische Baseline für Vergleich mit lernbasierten Methoden.
+dataset: TBD
+metrics:
+  - repeatability
+  - localization_error
+  - runtime

@@ -1,0 +1,75 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\geometry{margin=2.5cm}
+
+\title{State-of-the-Art-Recherche: 3D Keypoint Detection}
+\subtitle{Methoden, Datensätze, Anforderungen und Auswahl für die praktische Umsetzung}
+\author{Projektgruppe KI in der Produktion}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Diese Dokumentation fasst aktuelle Verfahren zur 3D Keypoint Detection zusammen. Ziel ist es, geeignete Methoden für eine praktische Umsetzung im Modul KI in der Produktion auszuwählen. Betrachtet werden klassische geometrische Verfahren, lernbasierte Detektoren, gemeinsame Detektions- und Deskriptorverfahren sowie aktuelle Transformer-basierte Ansätze. Zusätzlich werden passende Datensätze, Evaluationsmetriken und Auswahlkriterien beschrieben.
+\end{abstract}
+
+\tableofcontents
+
+\section{Ausgangssituation und Zielsetzung}
+Ziel des Projekts ist die Recherche, Umsetzung und Bewertung von Verfahren zur 3D Keypoint Detection. Die Methoden sollen nicht nur ausprobiert, sondern auch in ihrer Funktionsweise verstanden und wissenschaftlich begründet bewertet werden.
+
+\section{Grundlagen: Was ist 3D Keypoint Detection?}
+3D Keypoint Detection bezeichnet die Auswahl stabiler, wiedererkennbarer und informativer Punkte in 3D-Daten wie Punktwolken oder Meshes. Solche Keypoints können beispielsweise für Registrierung, Objekterkennung, Pose Estimation oder Vergleich von 3D-Objekten genutzt werden.
+
+\section{Methodenübersicht}
+\subsection{Klassische geometrische Verfahren}
+Beispiele sind ISS oder SIFT-3D. Diese Verfahren nutzen lokale geometrische Eigenschaften und eignen sich gut als Baseline.
+
+\subsection{USIP}
+USIP ist ein unüberwachter Ansatz, der stabile Interest Points in 3D-Punktwolken lernt. Besonders relevant ist die Methode, weil keine manuell annotierten Keypoints benötigt werden.
+
+\subsection{D3Feat}
+D3Feat lernt Detektion und Beschreibung lokaler 3D-Features gemeinsam. Dadurch eignet sich der Ansatz besonders für Punktwolken-Registrierung.
+
+\subsection{KeypointDETR}
+KeypointDETR überträgt die DETR-Idee auf 3D-Keypoint-Detection. Der Ansatz ist aktuell und wissenschaftlich interessant, aber vermutlich aufwendiger umzusetzen.
+
+\section{Datensätze}
+Relevante Datensätze sind unter anderem KeypointNet, 3DMatch, KITTI und gegebenenfalls ShapeNet-basierte Benchmarks. Die finale Wahl hängt davon ab, ob die Methode supervised, self-supervised oder unsupervised trainiert wird.
+
+\section{Evaluationskriterien}
+Wichtige Kriterien sind Wiederholbarkeit, Lokalisierungsfehler, Matching-Qualität, Registrierungserfolg, Laufzeit, Trainingsaufwand und Verständlichkeit der Methode.
+
+\section{Vergleich der Methoden}
+\begin{table}[h]
+\centering
+\begin{tabular}{llll}
+\toprule
+Methode & Typ & Stärke & Risiko \\
+\midrule
+ISS/SIFT-3D & klassisch & einfach erklärbar & begrenzte Leistung \\
+USIP & unsupervised & keine Keypoint-Labels nötig & Code/Setup prüfen \\
+D3Feat & lernbasiert & Detektion + Deskriptor & komplexer \\
+KeypointDETR & Transformer & sehr aktuell & hoher Aufwand \\
+\bottomrule
+\end{tabular}
+\caption{Erster Vergleich möglicher Methoden.}
+\end{table}
+
+\section{Empfohlene Projektstrategie}
+Als pragmatischer Einstieg sollte zuerst eine klassische Baseline umgesetzt werden. Danach eignet sich USIP als erste lernbasierte Methode. Wenn Zeit bleibt, kann D3Feat als zweite Methode ergänzt werden.
+
+\section{Fazit}
+Für das Projekt sind besonders Methoden geeignet, die wissenschaftlich relevant, praktisch lauffähig und verständlich erklärbar sind. Eine Kombination aus klassischer Baseline und USIP oder D3Feat erscheint für den Projektumfang realistisch.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}
