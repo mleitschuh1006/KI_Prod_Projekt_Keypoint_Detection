@@ -1,6 +1,0 @@
-ID,Titel,Jahr,Methode,Typ,Input,Daten/Benchmark,Code verfügbar?,Vorteile,Nachteile,Eignung
-P01,USIP: Unsupervised Stable Interest Point Detection from 3D Point Clouds,2019,USIP,unsupervised,Point Cloud,3DMatch/KITTI,ja,keine Keypoint-Labels nötig; gut erklärbar,älter; Setup prüfen,sehr hoch
-P02,D3Feat: Joint Learning of Dense Detection and Description of 3D Local Features,2020,D3Feat,self/supervised,Point Cloud,3DMatch/KITTI,ja,Detektor und Deskriptor gemeinsam; stark für Registrierung,komplexer als USIP,hoch
-P03,KeypointNet: A Large-scale 3D Keypoint Dataset,2020,Dataset/supervised Benchmark,supervised,3D Shape/Point Cloud,KeypointNet,ja,echte Keypoint-Annotationen; gute Evaluation,Objektzentriert; nicht Industrie-spezifisch,hoch
-P04,KeypointDETR: An End-to-End 3D Keypoint Detector,2024,Transformer/DETR,supervised,3D Shape/Point Cloud,KeypointNet,ja,aktuell; moderne Architektur,Preprocessing und Training aufwendiger,mittel
-P05,GeoTransformer,2022,keypoint-free registration,vergleichend,Point Cloud,3DMatch/KITTI,ja,starker Vergleichsansatz,keine explizite Keypoint Detection,niedrig bis mittel

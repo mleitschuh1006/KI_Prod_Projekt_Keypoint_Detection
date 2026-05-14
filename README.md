@@ -1,43 +1,64 @@
-# 3D Keypoint Detection – Projektübersicht
+# 3D Keypoint Detection
 
-Dieses Repository dient der strukturierten Recherche, Umsetzung und Bewertung von Verfahren zur 3D Keypoint Detection im Modul **KI in der Produktion**.
+Dieses Repository enthält die Projektarbeit zur **3D Keypoint Detection** im Modul **KI in der Produktion**.
 
-## Ziel des Projekts
+Ziel ist es, ausgewählte Verfahren zur Erkennung von Keypoints auf 3D-Punktwolken zu verstehen, praktisch umzusetzen und anhand eines geeigneten Datensatzes zu bewerten. Als Datengrundlage wird hauptsächlich **KeypointNet** verwendet.
 
-1. Aktuelle State-of-the-Art-Verfahren zu 3D Keypoint Detection recherchieren.
-2. Die Verfahren wissenschaftlich vergleichen und nachvollziehbar dokumentieren.
-3. Ein bis zwei geeignete Methoden auswählen.
-4. Diese Methoden mit einem passenden Datensatz ausprobieren, nachtrainieren und evaluieren.
-5. Ergebnisse verständlich bewerten und dokumentieren.
+## Projektziel
+
+Im Projekt sollen nicht möglichst viele Methoden vollständig umgesetzt werden. Stattdessen liegt der Fokus darauf, eine geeignete Methode fundiert auszuwählen, nachvollziehbar zu erklären, nachzutrainieren und zu evaluieren.
+
+Die Arbeit umfasst:
+
+- Recherche relevanter Paper und öffentlicher Repositories
+- Dokumentation der Verfahren in LaTeX
+- Auswahl einer geeigneten Methode für die Umsetzung
+- Vorbereitung und Nutzung des KeypointNet-Datensatzes
+- Training, Evaluation und Bewertung der Ergebnisse
 
 ## Repository-Struktur
 
 ```text
 .
-├── 01_recherche/      # Literaturrecherche, Paper-Zusammenfassungen und LaTeX-Dokumentation
-├── 02_daten/          # Hinweise, Download-Skripte und Struktur für verwendete Datensätze
-├── 03_code/           # Eigener Python-Code für Modelle, Training, Evaluation und Visualisierung
-├── 04_experimente/    # Konfigurationen und Protokolle einzelner Trainings-/Testläufe
-├── 05_ergebnisse/     # Plots, Tabellen, Metriken und finale Auswertungen
-└── README.md          # Einstiegspunkt und Projektbeschreibung
+├── 01_recherche/      # Paper, LaTeX-Dokumentation und wissenschaftliche Grundlagen
+├── 02_daten/          # Dokumentation zu KeypointNet, Datenstruktur und Splits
+├── 03_code/           # Eigener Code für Training, Evaluation und Visualisierung
+├── 04_experimente/    # Konfigurationen und Protokolle der Versuche
+├── 05_ergebnisse/     # Metriken, Plots, Tabellen und Auswertung
+└── README.md          # Allgemeine Projektübersicht
 ```
+
+## Datensatz
+
+Für Training und Evaluation wird primär **KeypointNet** genutzt:
+
+```text
+https://github.com/qq456cvb/KeypointNet
+```
+
+Große Datendateien werden nicht direkt im Repository gespeichert. Stattdessen werden Download, Ablagestruktur, Vorverarbeitung und Splits im Ordner `02_daten/` dokumentiert.
+
+## Betrachtete Methoden
+
+In der Recherche werden unter anderem folgende Verfahren betrachtet:
+
+- **UKPGAN**
+- **Skeleton Merger**
+- **SC3K**
+- **KeypointDETR**
+- **FL3K**
+- **3DFeat-Net**
+
+Wichtig für die finale Auswahl sind Verständlichkeit, wissenschaftliche Relevanz, öffentliche Code-Verfügbarkeit und die Möglichkeit, das Modell mit KeypointNet nachzutrainieren oder zu evaluieren.
 
 ## Empfohlener Arbeitsablauf
 
-1. Paper in `01_recherche/paper_matrix.csv` sammeln.
-2. Pro wichtigem Paper eine kurze Notiz in `01_recherche/paper-notizen/` schreiben.
-3. Die Recherche in `01_recherche/latex/main.tex` zusammenführen.
-4. Geeignete Methoden anhand von Verständlichkeit, Code-Verfügbarkeit, Datensatzanforderungen und Evaluierbarkeit auswählen.
-5. Datensatz in `02_daten/` dokumentieren.
-6. Experimente über Dateien in `04_experimente/configs/` definieren.
-7. Ergebnisse in `05_ergebnisse/` speichern und bewerten.
+1. Paper und Repositories in `01_recherche/` dokumentieren.
+2. KeypointNet lokal vorbereiten und Splits in `02_daten/` festhalten.
+3. Eine Methode für die Umsetzung auswählen.
+4. Training und Evaluation über `03_code/` und `04_experimente/` durchführen.
+5. Ergebnisse in `05_ergebnisse/` speichern und bewerten.
 
-## Kandidaten für die Umsetzung
+## Hinweis
 
-Für einen realistischen Projektumfang eignen sich besonders:
-
-- klassische geometrische Baseline, z. B. ISS/SIFT-3D
-- USIP als unüberwachtes 3D-Keypoint-Verfahren
-- D3Feat als lernbasiertes Verfahren für Detektion und Deskriptoren
-
-KeypointDETR oder andere Transformer-Verfahren sind wissenschaftlich interessant, aber vermutlich aufwendiger umzusetzen.
+Dieses Repository ist als strukturierte Arbeitsbasis für Recherche, Umsetzung und Präsentation gedacht. Die finale Bewertung soll zeigen, wie gut die gewählte Methode 3D-Keypoints erkennt und wie nachvollziehbar Training, Evaluation und Ergebnisse dokumentiert wurden.

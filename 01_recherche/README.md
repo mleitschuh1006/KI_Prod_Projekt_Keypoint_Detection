@@ -1,21 +1,24 @@
 # 01_recherche
 
-Dieser Ordner enthält die wissenschaftliche Grundlage des Projekts.
+Dieser Ordner enthält die wissenschaftliche Grundlage des Projekts zur **3D Keypoint Detection**.
 
-Hier werden Papers gesammelt, gelesen, zusammengefasst und in einer LaTeX-Datei zu einer State-of-the-Art-Übersicht verarbeitet.
+Hier werden die relevanten Paper gesammelt, gelesen, zusammengefasst und in einer LaTeX-Dokumentation aufbereitet. Ziel ist es, die ausgewählten Verfahren fachlich zu verstehen, ihre Grundideen nachvollziehbar zu dokumentieren und daraus eine begründete Entscheidung für die praktische Umsetzung abzuleiten.
 
-## Inhalt
+## Aktuelle Ordnerstruktur
 
 ```text
 01_recherche/
-├── latex/             # Hauptdokument der Recherche im Stil einer wissenschaftlichen Ausarbeitung
-├── paper-notizen/     # Kurze strukturierte Zusammenfassungen einzelner Papers
-└── paper_matrix.csv   # Übersicht aller gefundenen Methoden/Paper
-```
-
-## Zweck
-
-- Überblick über relevante 3D-Keypoint-Detection-Verfahren schaffen
-- Methoden systematisch vergleichbar machen
-- spätere Methodenauswahl begründen
-- Literaturbasis für Präsentation/Bericht vorbereiten
+├── README.md
+├── latex/
+│   ├── main.tex
+│   ├── references.bib
+│   ├── 3D_Keypoint_Detection_Doku.tex
+│   ├── 3D_Keypoint_Detection_Doku.pdf
+│   └── weitere LaTeX-Hilfsdateien
+└── paper/
+    ├── 3DFeat-Net.pdf
+    ├── Fast_and_Lightweight_3D_Keypoint_Detector.pdf
+    ├── KeypointDETR.pdf
+    ├── SC3K.pdf
+    ├── Skeleton_Merger.pdf
+    └── UKPGAN.pdf
